@@ -1,6 +1,6 @@
 # Authored by: John J. Zima
 # Initial build date 12 Jun 2016
-# Latest revision "B" 12 Jun 2016 by John J. Zima
+# Latest revision "C" 13 Jun 2016 by John J. Zima
 # Written for Python 2.7.11
 # This short app was developed to take an input set of numbers
 # and provide some stastistical outputs.
@@ -84,7 +84,7 @@ print "Lowest number       %s" % (lowest)
 print "Highest number      %s" % (highest)
 print "Sum                 %s" % (totals)
 print "Average             %s" % (avgpop)
-print "Standard deviation if whole population     %s." % (wholepop)
-print "Standard deviation if sample of population %s." % (partialpop)
+print "Standard deviation if whole population     %s" % (wholepop)
+print "Standard deviation if sample of population %s" % (partialpop)
 
 
