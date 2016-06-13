@@ -1,5 +1,6 @@
 # Authored by: John J. Zima
 # Initial build date 12 Jun 2016
+# Latest revision "A" 12 Jun 2016 by John J. Zima
 # Written for Python 2.7.11
 # This short app was developed to take an input set of numbers
 # and provide some stastistical outputs.
@@ -40,6 +41,19 @@ def std_dev_s(a):
 	mulist = average(a)
 	sq_diff_avg = [(x - mulist) **2 for x in a]
 	return sqrt(average_less_one(sq_diff_avg))
+	
+# Median calculations
+def median(a):
+	num_elements = len(a)
+	addr1 = int(0.5 * (num_elements - 1))
+	addr2 = int(0.5 * num_elements - 1)
+	addr3 = addr2 + 1
+	if num_elements % 2 == 0:
+		middle_mat = [a[addr2], a[addr3]]
+		print middle_mat
+		return average(middle_mat)
+	else:
+		return a[addr1]
 
 # Statistical calculations for this program
 totals = sum(data_set)
@@ -48,9 +62,13 @@ highest = max(data_set)
 wholepop = std_dev_p(data_set)
 partialpop = std_dev_s(data_set)
 avgpop = average(data_set)
+sorted_data_set = sorted(data_set)
+medianlist = median(sorted_data_set)
 	
 # The results of what happens in this program
 print "The data set we are evaluating is %s." % (data_set)
+print "A sorted version of these data is %s." % (sorted_data_set)
+print "The median of this list is %s." % (medianlist)
 print "The lowest number in these data is %s." % (lowest)
 print "The highest number in these data is %s." % (highest)
 print "The sum of these data is %s." % (totals)
