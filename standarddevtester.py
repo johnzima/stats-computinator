@@ -1,9 +1,13 @@
 # Authored by: John J. Zima
 # Initial build date 12 Jun 2016
-# Latest revision "A" 12 Jun 2016 by John J. Zima
+# Latest revision "B" 12 Jun 2016 by John J. Zima
 # Written for Python 2.7.11
 # This short app was developed to take an input set of numbers
 # and provide some stastistical outputs.
+
+# Library importation
+from collections import Counter
+
 
 # Initial user interaction section
 print """
@@ -54,6 +58,10 @@ def median(a):
 		return average(middle_mat)
 	else:
 		return a[addr1]
+		
+# Mode calculation
+def mode(a):
+	return Counter(a).most_common(1)
 
 # Statistical calculations for this program
 totals = sum(data_set)
@@ -64,14 +72,19 @@ partialpop = std_dev_s(data_set)
 avgpop = average(data_set)
 sorted_data_set = sorted(data_set)
 medianlist = median(sorted_data_set)
+modelist = mode(data_set)
 	
 # The results of what happens in this program
-print "The data set we are evaluating is %s." % (data_set)
-print "A sorted version of these data is %s." % (sorted_data_set)
-print "The median of this list is %s." % (medianlist)
-print "The lowest number in these data is %s." % (lowest)
-print "The highest number in these data is %s." % (highest)
-print "The sum of these data is %s." % (totals)
-print "The average of these data is %s." % (avgpop)
-print "The standard deviation if these data are the whole population %s." % (wholepop)
-print "The standard deviation if these data are a sample of the whole population %s." % (partialpop)
+print "\nThese are the statistical outputs:"
+print "Data set            %s" % (data_set)
+print "Sorted data set     %s" % (sorted_data_set)
+print "Median              %s" % (medianlist)
+print "Mode [(value, qty)] %s" % (modelist)
+print "Lowest number       %s" % (lowest)
+print "Highest number      %s" % (highest)
+print "Sum                 %s" % (totals)
+print "Average             %s" % (avgpop)
+print "Standard deviation if whole population     %s." % (wholepop)
+print "Standard deviation if sample of population %s." % (partialpop)
+
+
